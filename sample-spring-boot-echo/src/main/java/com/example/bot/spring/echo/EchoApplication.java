@@ -25,18 +25,36 @@ import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
+import java.util.Arrays;
 
 @SpringBootApplication
 @LineMessageHandler
 public class EchoApplication {
+	private String[] arrHello = {"Hai","Hi","Hello","Halo","Hallo","Hy"};
+
     public static void main(String[] args) {
         SpringApplication.run(EchoApplication.class, args);
+    }
+
+    private String compileResponse(String message)
+    {
+    	String response = "";
+    	if(Arrays.asList(arrHello).contains(message.toLowerCase()))
+        {
+        	response = message + " juga";
+
+        }
+        else
+        {
+        	response = message;
+        }
+    	return response;
     }
 
     @EventMapping
     public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
         System.out.println("event: " + event);
-        return new TextMessage(event.getMessage().getText() + " test Line SDK");
+        return new TextMessage(compileResponse(event.getMessage().getText()));
     }
 
     @EventMapping
