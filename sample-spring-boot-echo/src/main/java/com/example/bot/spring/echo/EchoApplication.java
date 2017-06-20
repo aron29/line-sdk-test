@@ -30,7 +30,7 @@ import java.util.Arrays;
 @SpringBootApplication
 @LineMessageHandler
 public class EchoApplication {
-	private String[] arrHello = {"Hai","Hi","Hello","Halo","Hallo","Hy"};
+	private String[] arrHello = {"hai","hi","hello","halo","hallo","hy"};
 
     public static void main(String[] args) {
         SpringApplication.run(EchoApplication.class, args);
