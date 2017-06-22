@@ -31,8 +31,7 @@ import java.util.Arrays;
 @LineMessageHandler
 public class EchoApplication {
 	private String[] arrHello = {"hai","hi","hello","halo","hallo","hy"};
-	private
-
+	
     public static void main(String[] args) {
         SpringApplication.run(EchoApplication.class, args);
     }
