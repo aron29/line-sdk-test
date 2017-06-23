@@ -382,6 +382,7 @@ public class KitchenSinkController {
        String[] arrBadWords = {"bego","goblok","tolol","idiot","ngehe","ngentot"};
        String[] arrHello = {"hai","hi","hello","halo","hallo","hy"};
     
+       text = text.toLowerCase();
        if(Arrays.asList(arrBadWords).contains(text.toLowerCase())){
             message = "Bahasanya tolong dijaga ya. Itu otak gak pernah disekolahin ya?";
 
@@ -389,11 +390,11 @@ public class KitchenSinkController {
         else if(Arrays.asList(arrBadWords).contains(text.toLowerCase())){
             message = text + " juga";
         }
-        else if(text.toLowerCase().equals("eric"))
+        else if(text.equals("eric"))
         {
             message = "Hello, Eric is my creator. Any further information about him needs special access";
         }
-        else if(text.toLowerCase().equals("mishelle"))
+        else if(text.equals("mishelle"))
         {
             message = "You have no access for this information";
         }
