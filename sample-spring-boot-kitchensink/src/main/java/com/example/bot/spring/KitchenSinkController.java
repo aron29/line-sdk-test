@@ -366,10 +366,11 @@ public class KitchenSinkController {
                 break;
             default:
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(
-                        replyToken,
-                        text
-                );
+                // this.replyText(
+                //         replyToken,
+                //         text
+                // );
+                replyLineText(replyToken,text);
                 break;
         }
     }
@@ -378,7 +379,7 @@ public class KitchenSinkController {
     {
        String message = "This is ARON speaking";
        this.replyText(
-                     replyToken,
+                     token,
                      message                
         );
     }
