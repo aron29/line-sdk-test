@@ -377,7 +377,19 @@ public class KitchenSinkController {
 
     private void replyLineText(String token, String text)
     {
-       String message = "This is ARON speaking";
+       String message = "";
+       String defaultMessage = "This is ARON speaking";
+       String[] arrBadWords = {"bego","goblok","tolol","idiot","ngehe","ngentot"} 
+
+       if(Arrays.asList(arrBadWords).contains(text.toLowerCase())){
+            message = "Bahasanya tolong dijaga ya. Itu otak gak pernah disekolahin ya?";
+
+        }
+        else
+        {
+            message = defaultMessage;
+        }
+
        this.replyText(
                      token,
                      message                
