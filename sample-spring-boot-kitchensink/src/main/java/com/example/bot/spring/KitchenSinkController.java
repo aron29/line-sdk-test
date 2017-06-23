@@ -408,11 +408,10 @@ public class KitchenSinkController {
         else if(text.equals("alfin"))
         {
             String imageUrl = createUri("/static/friends/alfin.jpg");
-                CarouselTemplate carouselTemplate = new CarouselTemplate(
-                        Arrays.asList(
-                                new CarouselColumn(imageUrl, "Alfin Tandiono", "No spesific details", null)
-                                )
-                        ));
+            CarouselTemplate carouselTemplate = new CarouselTemplate(
+                        Arrays.asList(new CarouselColumn(imageUrl, "Alfin Tandiono", "No spesific details", null))
+                        );
+            
             templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
             replyWithCarousel = true;
         }
