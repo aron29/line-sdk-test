@@ -503,6 +503,7 @@ public class KitchenSinkController {
                                 ))
                         ));
             templateMessage = new TemplateMessage("CASSE", carouselTemplate);
+            replyWithCarousel = true;
         }
         else
         {
