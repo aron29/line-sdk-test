@@ -430,7 +430,7 @@ public class KitchenSinkController {
         }
         else if(replyWithCarousel)
         {
-            this.reply(replyToken, templateMessage);
+            this.reply(token, templateMessage);
         }
     }
 
