@@ -176,7 +176,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handlePostbackEvent(PostbackEvent event) {
         String replyToken = event.getReplyToken();
-        String data = event.getPostbackContent.getData();
+        String data = event.getPostbackContent().getData();
         String response = "";
 
         data = data.toLowerCase();
