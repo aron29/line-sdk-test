@@ -374,6 +374,15 @@ public class KitchenSinkController {
         }
     }
 
+    private void replyLineText(String token, String text)
+    {
+       String message = "This is ARON speaking";
+       this.replyText(
+                     replyToken,
+                     message                
+        );
+    }
+
     private static String createUri(String path) {
         return ServletUriComponentsBuilder.fromCurrentContextPath()
                                           .path(path).build()
