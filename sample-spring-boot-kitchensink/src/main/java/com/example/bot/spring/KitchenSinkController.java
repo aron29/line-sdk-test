@@ -176,7 +176,19 @@ public class KitchenSinkController {
     @EventMapping
     public void handlePostbackEvent(PostbackEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Got postback " + event.getPostbackContent().getData());
+        String data = event.getPostbackContent.getData();
+        String response = "";
+
+        data = data.toLowerCase();
+        if(data.equals("alfin tandiono"))
+        {
+            response = "Alfin Tandiono IT Tarumanagara Angkatan 2010";
+        }
+        else
+        {
+            response = "Postback : " + data;
+        }
+        this.replyText(replyToken, response);
     }
 
     @EventMapping
@@ -410,11 +422,9 @@ public class KitchenSinkController {
             String imageUrl = createUri("/static/friends/alfin.jpg");
             CarouselTemplate carouselTemplate = new CarouselTemplate(
                         Arrays.asList(
-                            new CarouselColumn(imageUrl, "Alfin Tandiono", "No spesific details", Arrays.asList(
-                                        new URIAction("Go to line.me",
-                                                      "https://line.me"),
-                                        new PostbackAction("Say hello1",
-                                                           "hello こんにちは")
+                            new CarouselColumn(imageUrl, "Alfin Tandiono", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Alfin Tandiono")
                                 ))
                             )
                         );
