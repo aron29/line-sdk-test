@@ -381,32 +381,58 @@ public class KitchenSinkController {
        String defaultMessage = "This is ARON speaking";
        String[] arrBadWords = {"bego","goblok","tolol","idiot","ngehe","ngentot"};
        String[] arrHello = {"hai","hi","hello","halo","hallo","hy"};
-    
+       boolean replyWithText = false;
+       boolean replyWithCarousel = false;
+       TemplateMessage templateMessage;
+
        text = text.toLowerCase();
+
        if(Arrays.asList(arrBadWords).contains(text.toLowerCase())){
             message = "Bahasanya tolong dijaga ya. Itu otak gak pernah disekolahin ya?";
-
+            replyWithText = true;
         }
         else if(Arrays.asList(arrBadWords).contains(text.toLowerCase())){
             message = text + " juga";
+            replyWithText = true;
         }
         else if(text.equals("eric"))
         {
             message = "Hello, Eric is my creator. Any further information about him needs special access";
+            replyWithText = true;
         }
         else if(text.equals("mishelle"))
         {
             message = "You have no access for this information";
+            replyWithText = true;
+        }
+        else if(text.equals("alfin"))
+        {
+            String imageUrl = createUri("/static/friends/alfin.jpg");
+                CarouselTemplate carouselTemplate = new CarouselTemplate(
+                        Arrays.asList(
+                                new CarouselColumn(imageUrl, "Alfin Tandiono", "No spesific details", null)
+                                )
+                        ));
+            templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
+            replyWithCarousel = true;
         }
         else
         {
             message = defaultMessage;
+            replyWithText = true;
         }
 
-       this.replyText(
-                     token,
-                     message                
-        );
+        if(replyWithText)
+        {
+           this.replyText(
+                         token,
+                         message                
+            );   
+        }
+        else if(replyWithCarousel)
+        {
+            this.reply(replyToken, templateMessage);
+        }
     }
 
     private static String createUri(String path) {
