@@ -479,17 +479,17 @@ public class KitchenSinkController {
         }
         else if(text.equals("casse"))
         {
-            String cUrl = createUri("/static/buttons/allen.jpg");
-            String aUrl = createUri("/static/buttons/alfin.jpg");
-            String sUrl = createUri("/static/buttons/sendy.jpg");
-            String ssUrl = createUri("/static/buttons/simon.jpg");
-                CarouselTemplate carouselTemplate = new CarouselTemplate(
+            String cUrl = createUri("/static/friends/allen.jpg");
+            String aUrl = createUri("/static/friends/alfin.jpg");
+            String sUrl = createUri("/static/friends/sendy.jpg");
+            String ssUrl = createUri("/static/friends/simon.jpg");
+            CarouselTemplate carouselTemplate = new CarouselTemplate(
                         Arrays.asList(
                                 new CarouselColumn(cUrl, "Cliffen Allen", "CASSE", Arrays.asList(
                                         new PostbackAction("Information",
                                                            "Cliffen Allen")
                                 )),
-                                new CarouselColumn(aUrl"Alfin Tandiono", "CASSE", Arrays.asList(
+                                new CarouselColumn(aUrl,"Alfin Tandiono", "CASSE", Arrays.asList(
                                         new PostbackAction("Information",
                                                            "Alfin Tandiono")
                                 )),
@@ -501,9 +501,8 @@ public class KitchenSinkController {
                                         new PostbackAction("Information",
                                                            "Stefanus Simon")
                                 ))
-
                         ));
-                TemplateMessage templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
+            templateMessage = new TemplateMessage("CASSE", carouselTemplate);
         }
         else
         {
