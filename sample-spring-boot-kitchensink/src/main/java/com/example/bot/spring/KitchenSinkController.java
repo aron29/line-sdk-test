@@ -383,7 +383,7 @@ public class KitchenSinkController {
        String[] arrHello = {"hai","hi","hello","halo","hallo","hy"};
        boolean replyWithText = false;
        boolean replyWithCarousel = false;
-       TemplateMessage templateMessage;
+       TemplateMessage templateMessage = null;
 
        text = text.toLowerCase();
 
