@@ -389,11 +389,11 @@ public class KitchenSinkController {
         else if(Arrays.asList(arrBadWords).contains(text.toLowerCase())){
             message = text + " juga";
         }
-        else if(text.equalsIgnoreCase("eric"))
+        else if(text.toLowerCase().equals("eric"))
         {
             message = "Hello, Eric is my creator. Any further information about him needs special access";
         }
-        else if(text.equalsIgnoreCase("mishelle"))
+        else if(text.toLowerCase().equals("mishelle"))
         {
             message = "You have no access for this information";
         }
