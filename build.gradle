@@ -205,6 +205,10 @@ repositories {
     mavenCentral()
 }
 
+findbugs {
+   ignoreFailures = true
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.0'
 }
