@@ -379,7 +379,7 @@ public class KitchenSinkController {
     {
        String message = "";
        String defaultMessage = "This is ARON speaking";
-       String[] arrBadWords = {"bego","goblok","tolol","idiot","ngehe","ngentot"} 
+       String[] arrBadWords = {"bego","goblok","tolol","idiot","ngehe","ngentot"};
 
        if(Arrays.asList(arrBadWords).contains(text.toLowerCase())){
             message = "Bahasanya tolong dijaga ya. Itu otak gak pernah disekolahin ya?";
