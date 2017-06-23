@@ -409,7 +409,14 @@ public class KitchenSinkController {
         {
             String imageUrl = createUri("/static/friends/alfin.jpg");
             CarouselTemplate carouselTemplate = new CarouselTemplate(
-                        Arrays.asList(new CarouselColumn(imageUrl, "Alfin Tandiono", "No spesific details", null))
+                        Arrays.asList(
+                            new CarouselColumn(imageUrl, "Alfin Tandiono", "No spesific details", Arrays.asList(
+                                        new URIAction("Go to line.me",
+                                                      "https://line.me"),
+                                        new PostbackAction("Say hello1",
+                                                           "hello こんにちは")
+                                ))
+                            )
                         );
             
             templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
