@@ -69,6 +69,10 @@ subprojects {
     }
     apply plugin: 'io.spring.dependency-management'
 
+    findbugs {
+        ignoreFailures = true
+    }   
+
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
@@ -203,10 +207,6 @@ subprojects {
 
 repositories {
     mavenCentral()
-}
-
-findbugs {
-   ignoreFailures = true
 }
 
 task wrapper(type: Wrapper) {
