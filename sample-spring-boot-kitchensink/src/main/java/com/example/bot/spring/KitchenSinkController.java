@@ -477,6 +477,34 @@ public class KitchenSinkController {
             templateMessage = new TemplateMessage("Sendy Wiguna Profile", carouselTemplate);
             replyWithCarousel = true;
         }
+        else if(text.equals("casse"))
+        {
+            String cUrl = createUri("/static/buttons/allen.jpg");
+            String aUrl = createUri("/static/buttons/alfin.jpg");
+            String sUrl = createUri("/static/buttons/sendy.jpg");
+            String ssUrl = createUri("/static/buttons/simon.jpg");
+                CarouselTemplate carouselTemplate = new CarouselTemplate(
+                        Arrays.asList(
+                                new CarouselColumn(cUrl, "Cliffen Allen", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Cliffen Allen")
+                                )),
+                                new CarouselColumn(aUrl"Alfin Tandiono", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Alfin Tandiono")
+                                )),
+                                new CarouselColumn(sUrl, "Sendy Wiguna", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Sendy Wiguna")
+                                )),
+                                new CarouselColumn(ssUrl, "Stefanus Simon", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Stefanus Simon")
+                                ))
+
+                        ));
+                TemplateMessage templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
+        }
         else
         {
             message = defaultMessage;
