@@ -180,9 +180,9 @@ public class KitchenSinkController {
         String response = "";
 
         data = data.toLowerCase();
-        if(data.equals("alfin tandiono"))
+        if(data.equals("alfin tandiono") || data.equals("cliffen allen") || data.equals("stefanus simon") || data.equals("sendy wiguna"))
         {
-            response = "Alfin Tandiono IT Tarumanagara Angkatan 2010";
+            response = event.getPostbackContent().getData() + " IT Tarumanagara Angkatan 2010";
         }
         else
         {
@@ -429,7 +429,52 @@ public class KitchenSinkController {
                             )
                         );
             
-            templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
+            templateMessage = new TemplateMessage("Alfin Tandiono Profile", carouselTemplate);
+            replyWithCarousel = true;
+        }
+        else if(text.equals("simon"))
+        {
+            String imageUrl = createUri("/static/friends/simon.jpg");
+            CarouselTemplate carouselTemplate = new CarouselTemplate(
+                        Arrays.asList(
+                            new CarouselColumn(imageUrl, "Stefanus Simon", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Stefanus Simon")
+                                ))
+                            )
+                        );
+            
+            templateMessage = new TemplateMessage("Stefanus Simon Profile", carouselTemplate);
+            replyWithCarousel = true;
+        }
+        else if(text.equals("allen"))
+        {
+            String imageUrl = createUri("/static/friends/allen.jpg");
+            CarouselTemplate carouselTemplate = new CarouselTemplate(
+                        Arrays.asList(
+                            new CarouselColumn(imageUrl, "Cliffen Allen", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Cliffen Allen")
+                                ))
+                            )
+                        );
+            
+            templateMessage = new TemplateMessage("Cliffen Allen Profile", carouselTemplate);
+            replyWithCarousel = true;
+        }
+        else if(text.equals("sendy"))
+        {
+            String imageUrl = createUri("/static/friends/sendy.jpg");
+            CarouselTemplate carouselTemplate = new CarouselTemplate(
+                        Arrays.asList(
+                            new CarouselColumn(imageUrl, "Sendy Wiguna", "CASSE", Arrays.asList(
+                                        new PostbackAction("Information",
+                                                           "Sendy Wiguna")
+                                ))
+                            )
+                        );
+            
+            templateMessage = new TemplateMessage("Sendy Wiguna Profile", carouselTemplate);
             replyWithCarousel = true;
         }
         else
